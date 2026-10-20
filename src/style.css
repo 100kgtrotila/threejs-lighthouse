@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+:root { font-family: 'DM Sans', sans-serif; color: #f4eee2; background: #07141c; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; overflow: hidden; }
+button { font: inherit; }
+#app, .scene-canvas { width: 100vw; height: 100vh; display: block; }
+.scene-canvas { position: fixed; inset: 0; outline: none; }
+.overlay { position: relative; min-height: 100vh; pointer-events: none; display: flex; flex-direction: column; padding: clamp(24px, 4vw, 60px); background: linear-gradient(90deg, rgba(5, 17, 24, .85) 0%, rgba(5, 17, 24, .48) 33%, rgba(5, 17, 24, 0) 68%); }
+.eyebrow { display: flex; align-items: center; gap: 13px; font-size: 10px; letter-spacing: .24em; font-weight: 700; color: #c7cbd0; }
+.eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #e0aa74; box-shadow: 0 0 15px #e0aa74; }
+.eyebrow-number { margin-left: auto; color: #a6b0b8; }
+.hero-copy { margin-top: auto; margin-bottom: auto; max-width: 570px; transition: opacity .45s ease, transform .45s ease; }
+.kicker { color: #d7ae80; font-size: 11px; text-transform: uppercase; letter-spacing: .34em; font-weight: 700; margin: 0 0 23px; }
+h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(52px, 7.2vw, 108px); line-height: 1.04; letter-spacing: -.055em; font-weight: 500; margin: 0; text-shadow: 0 2px 24px rgba(0,0,0,.2); }
+h1 em { color: #e7bc8d; font-weight: 500; }
+.intro { max-width: 360px; margin: 32px 0 28px; font-size: 14px; line-height: 1.85; color: #c2cbd0; }
+.explore-button { pointer-events: auto; border: 1px solid rgba(236, 213, 185, .65); background: rgba(219, 171, 119, .13); color: #fff5e7; padding: 13px 18px; border-radius: 2px; cursor: pointer; font-size: 11px; letter-spacing: .13em; text-transform: uppercase; font-weight: 700; transition: background .2s ease; }
+.explore-button:hover, .explore-button:focus-visible { background: rgba(219, 171, 119, .3); }
+.explore-button span { font-size: 18px; margin-left: 17px; font-weight: 400; vertical-align: -1px; }
+.bottom-bar { display: flex; align-items: end; justify-content: space-between; gap: 20px; color: #aab7bf; font-size: 10px; letter-spacing: .17em; font-weight: 700; }
+.settings-button { pointer-events: auto; white-space: nowrap; color: #e9e1d4; background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.45); padding: 9px 0; cursor: pointer; font-size: 10px; letter-spacing: .15em; }
+.settings-button:hover, .settings-button:focus-visible { color: #e7bc8d; }
+.scene-gui { position: fixed !important; top: 78px !important; right: clamp(24px, 4vw, 60px) !important; z-index: 10; --background-color: #10232d; --text-color: #e8e3d8; --title-background-color: #19313c; --widget-color: #28414b; --hover-color: #365967; --focus-color: #4b6e79; --number-color: #e7bc8d; --string-color: #e7bc8d; font-family: 'DM Sans', sans-serif; }
+.is-exploring .hero-copy .kicker, .is-exploring .hero-copy h1, .is-exploring .hero-copy .intro { opacity: 0; }
+.is-exploring .overlay { background: none; }
+@media (max-width: 700px) { .overlay { padding: 22px; background: linear-gradient(180deg, rgba(5,17,24,.57), transparent 28%, transparent 43%, rgba(5,17,24,.84)); } .hero-copy { margin-top: auto; margin-bottom: 34px; } h1 { font-size: clamp(48px, 12vw, 68px); } .intro { margin: 18px 0 20px; font-size: 12px; max-width: 300px; } .bottom-bar > span { max-width: 160px; line-height: 1.6; font-size: 8px; } .eyebrow-number { display: none; } .scene-gui { top: 60px !important; right: 20px !important; } }
+@media (prefers-reduced-motion: reduce) { .hero-copy, .explore-button { transition: none; } }
